@@ -4,40 +4,41 @@ import { MotionDiv, MotionH3 } from "../common/motion-wrapper";
 import { SummaryViewer } from "../summaries/summary-viewer";
 
 const DEMO_SUMMARY = `
-🌍 AI Just Took Over the Music Charts! 🎶🤖
+🏥 AI Just Diagnosed a Rare Disease in Seconds! 🤖🧬
 Quick Overview
-•🎯An AI-generated song just hit #1 on global charts—welcome to the future of music.
-•📌This marks a huge turning point for AI in creative industries.
+•🎯An AI-powered diagnostic system just identified a rare illness faster than any human doctor—welcome to the future of healthcare.
+•📌This milestone is reshaping the medical industry and patient care standards.
 
 # Document Details
-•📄Type: Viral News Summary
-•👥For: Music lovers, tech enthusiasts, creators, and trend-watchers
+•📄Type: Medical Breakthrough Brief
+•👥For: Healthcare professionals, tech innovators, patients, and policy-makers
 
 #Key Highlights
-•🚀An AI-generated track created by a solo developer topped Spotify Global Top 50
-•⭐The AI was trained on 10,000+ pop hits to mimic human emotion and style
-•💫Industry leaders like Universal and Sony are now exploring AI collabs
+•🚀A deep learning model diagnosed a rare genetic disorder from a patient's scan in under 10 seconds
+•⭐The system was trained on millions of real-world cases, enabling near-instant pattern recognition
+•💫Hospitals across Europe and Asia are beginning pilot integrations of this technology
 
 # Why It Matters
-•💡This breakthrough blurs the line between human creativity and machine intelligence, pushing us into a new era where AI doesn’t just support art—it creates it. The implications for artists, producers, and listeners are massive.
+•💡This breakthrough could drastically reduce diagnostic errors, improve early detection, and cut costs. It opens the door to AI-augmented medicine where precision and speed are dramatically improved.
 
 #Main Points
-•🎯Main insight or finding: AI can now create commercially successful music indistinguishable from human-made songs
-•💪Key strength or advantage: Rapid production, zero writer’s block, scalable creativity
-•🔥Important outcome or result: Record labels are racing to invest in AI-music tools and partnerships
+•🎯Main insight or finding: AI can now detect and diagnose complex conditions with superhuman accuracy and speed
+•💪Key strength or advantage: Faster diagnoses, broader pattern recognition, and unbiased analysis
+•🔥Important outcome or result: Medical institutions are rapidly adopting AI diagnostics into emergency and critical care units
 
 # Pro Tips
-•⭐First practical recommendation: Artists should start experimenting with AI tools to stay ahead
-•💎Second valuable insight: Use AI as a collaborator, not a competitor—it’s a creative amplifier
-•🌟Third actionable advice: Learn prompt engineering to direct AI’s musical output more precisely
+•⭐First practical recommendation: Doctors should begin familiarizing themselves with AI diagnostic tools to enhance workflows
+•💎Second valuable insight: Integrate AI into second-opinion processes to reduce misdiagnoses
+•🌟Third actionable advice: Stay informed on AI compliance and ethical considerations in patient data usage
 
 #Key Terms to Know
-•📚AI Music Generation: Using artificial intelligence to compose and produce songs
-•🔍Neural Networks: Algorithms that mimic the brain’s structure to understand patterns—in this case, musical ones
+•📚AI Diagnostics: Using artificial intelligence to analyze patient data and identify health conditions
+•🔍Deep Learning: A subset of machine learning involving neural networks trained on massive datasets for complex decision-making
 
 #Bottom Line
-•💫AI isn’t coming for your playlist—it’s already in it. Stay curious, stay creative.
+•💫AI isn’t just changing medicine—it’s saving lives. Embrace the shift, empower your practice.
 `;
+
 
 export default function DemoSection() {
   return (
