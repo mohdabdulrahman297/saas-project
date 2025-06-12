@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.21.0",
+    "@google/genai": "^1.4.0",
     "@langchain/community": "^0.3.46",
     "@langchain/core": "^0.3.58",
+    "@neondatabase/serverless": "^1.0.1",
     "@radix-ui/react-slot": "^1.2.3",
     "@uploadthing/react": "^7.3.1",
     "class-variance-authority": "^0.7.1",
