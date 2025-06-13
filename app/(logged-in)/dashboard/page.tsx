@@ -3,6 +3,7 @@ import EmptySummaryState from "@/components/summaries/empty-summary-state";
 import SummaryCard from "@/components/summaries/summary-card";
 import { Button } from "@/components/ui/button";
 import { getSummaries } from "@/lib/summaries";
+import { hasReachedUploadLimit } from "@/lib/user";
 
 import { currentUser } from "@clerk/nextjs/server";
 import { ArrowRight, Plus } from "lucide-react";
@@ -14,7 +15,8 @@ export default async function DashboardPage() {
   const userId = user?.id;
   if(!userId) return redirect("/sign-in");
 
-  const uploadLimit = 5;
+  const { hasReachedLimit, uploadLimit, uploadCount } =
+    await hasReachedUploadLimit(userId);
   const summaries = await getSummaries(userId);
   return (
     <main className="min-h-screen">
@@ -30,7 +32,7 @@ export default async function DashboardPage() {
                 Transform your PDFs into concise, actionable insights
               </p>
             </div>
-
+{!hasReachedLimit && (
             <Button
               variant={"link"}
               className="bg-linear-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 hover:scale-105 transition-all duration-300 group hover:no-underline"
@@ -40,7 +42,9 @@ export default async function DashboardPage() {
                 New Summary
               </Link>
             </Button>
+            )}
           </div>
+          {hasReachedLimit && (
           <div className="mb-6">
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-blue-800">
               <p className="text-sm ">
@@ -57,6 +61,7 @@ export default async function DashboardPage() {
               </p>
             </div>
           </div>
+          )}
           {summaries.length === 0 ? (
             <EmptySummaryState />
           ) : (

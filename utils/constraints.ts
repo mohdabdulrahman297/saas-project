@@ -10,7 +10,7 @@ export const pricingPlans = [
       "Email support",
     ],
     id: "basic",
-    paymentLink:  "https://buy.stripe.com/test_3cscMQcF8548gz6cMM",
+    paymentLink:  "https://buy.stripe.com/test_aFaeVfdow9vSfLdgXF3AY00",
     priceId:  "price_1RA9yVCTlpmJdURCo5eDA5T5",
   },
   {
@@ -24,7 +24,7 @@ export const pricingPlans = [
       "Markdown Export",
     ],
     id: "pro",
-    paymentLink: "https://buy.stripe.com/test_28o7sw7kO7cg6Yw7st",
+    paymentLink: "https://buy.stripe.com/test_fZu5kF0BK4by9mPcHp3AY01",
     priceId:  "price_1RA9yVCTlpmJdURCk8Oi1pwO",
   },
 ];
