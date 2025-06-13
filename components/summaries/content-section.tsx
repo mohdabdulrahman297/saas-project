@@ -43,24 +43,27 @@ export default function ContentSection({
   points: string[];
 }) {
   return (
-    <MotionDiv
-      variants={containerVariants}
-      key={points.join("")}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      className="space-y-4"
-    >
-      {points.map((point, index) => {
-        const { isMainPoint, hasEmoji, isEmpty } = parsePoint(point);
+  <MotionDiv
+    variants={containerVariants}
+    key={points.join("")}
+    initial="hidden"
+    animate="visible"
+    exit="exit"
+    className="space-y-4"
+  >
+    <h2 className="text-2xl font-semibold text-muted-foreground">{title}</h2>
 
-        if (isEmpty) return null;
+    {points.map((point, index) => {
+      const { isMainPoint, hasEmoji, isEmpty } = parsePoint(point);
 
-        if (hasEmoji || isMainPoint) {
-          return <EmojiPoint key={`point-${index}`} point={point} />;
-        }
-        return <RegularPoint key={`point-${index}`} point={point} />;
-      })}
-    </MotionDiv>
-  );
+      if (isEmpty) return null;
+
+      if (hasEmoji || isMainPoint) {
+        return <EmojiPoint key={`point-${index}`} point={point} />;
+      }
+      return <RegularPoint key={`point-${index}`} point={point} />;
+    })}
+  </MotionDiv>
+);
+
 }
