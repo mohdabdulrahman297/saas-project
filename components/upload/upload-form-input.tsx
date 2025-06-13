@@ -12,7 +12,7 @@ interface UploadFormInputProps {
 }
 
 const UploadFormInput = forwardRef<HTMLFormElement, UploadFormInputProps>(
-  ({ onSubmit, isLoading }, ref) => {
+  ({ onSubmit, isloading }, ref) => {
     return (
       <form ref={ref} className="flex flex-col gap-6" onSubmit={onSubmit}>
         <div className="flex justify-end items-center gap-1.5">
@@ -22,11 +22,11 @@ const UploadFormInput = forwardRef<HTMLFormElement, UploadFormInputProps>(
             name="file"
             accept="application/pdf"
             required
-            className={cn(isLoading && "opacity-50 cursor-not-allowed")}
-            disabled={isLoading}
+            className={cn(isloading && "opacity-50 cursor-not-allowed")}
+            disabled={isloading}
           />
-          <Button disabled={isLoading}>
-            {isLoading ? (
+          <Button disabled={isloading}>
+            {isloading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Processing...

@@ -10,14 +10,14 @@ import {
 } from "@/actions/upload-actions";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import  LoadingSkeleton  from "./loading-skeleton";
+import LoadingSkeleton from "./loading-skeleton";
 //schema with zod
 
 const schema = z.object({
   file: z
-    .instanceof(File, { message: "Invalid file" })
+    .any()
     .refine(
-      (file) => file.size <= 20 * 1024 * 1024,
+      (file) => file instanceof File && file.size <= 20 * 1024 * 1024,
       "File size must be less than 20MB"
     )
     .refine(
@@ -56,7 +56,7 @@ export default function UploadForm() {
 
       //validating the fields
       const validatedFields = schema.safeParse({ file });
-      
+
       if (!validatedFields.success) {
         toast("❌ Something went wrong", {
           description:
@@ -88,12 +88,12 @@ export default function UploadForm() {
         description: "Hang tight! Our AI is reading through your document! ✨",
       });
 
-      const uploadFileUrl=uploadResponse[0].serverData.fileUrl;
+      const uploadFileUrl = uploadResponse[0].serverData.fileUrl;
 
       //parse the pdf using lang chain
       const result = await generatePdfSummary({
-        fileUrl:uploadFileUrl,
-        fileName:file.name,
+        fileUrl: uploadFileUrl,
+        fileName: file.name,
       });
 
       const { data = null, message = null } = result || {};
@@ -120,7 +120,16 @@ export default function UploadForm() {
           });
 
           formRef.current?.reset();
-          router.push(`/summaries/${storeResult.data.id}`);
+          if (storeResult?.success && storeResult.data?.id) {
+            router.push(`/summaries/${storeResult.data.id}`);
+          } else {
+            console.error("Store result:", storeResult);
+            toast("❌ Failed to save summary", {
+              description:
+                storeResult?.message || "An unexpected error occurred.",
+              style: { color: "red" },
+            });
+          }
         }
       }
     } catch (error) {
@@ -146,7 +155,7 @@ export default function UploadForm() {
       </div>
 
       <UploadFormInput
-        isLoading={isLoading}
+        isloading={isLoading}
         ref={formRef}
         onSubmit={handleSubmit}
       />
@@ -167,7 +176,7 @@ export default function UploadForm() {
             </div>
           </div>
 
-          <LoadingSkeleton/>
+          <LoadingSkeleton />
         </>
       )}
     </div>

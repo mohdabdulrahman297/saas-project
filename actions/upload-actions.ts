@@ -92,7 +92,7 @@ async function savePdfSummary({
     const [savedSummary] = await sql`
     INSERT INTO pdf_summaries (
       user_id,
-      original_file_url,
+      orignal_file_url,
       summary_text,
       title,
       file_name
@@ -102,7 +102,7 @@ async function savePdfSummary({
     ${summary},
     ${title},
     ${fileName}
-     )RETURNING id,summary_text`;
+     )RETURNING id, summary_text;`;
 
     return savedSummary;
   } catch (error) {

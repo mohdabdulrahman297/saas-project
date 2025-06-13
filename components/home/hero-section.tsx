@@ -21,7 +21,7 @@ const buttonVariants = {
   },
 };
 
-export default function HeroSection() {
+export default function Hebluection() {
   return (
     <MotionSection
       variants={containerVariants}
