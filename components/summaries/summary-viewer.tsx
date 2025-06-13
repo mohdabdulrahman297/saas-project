@@ -1,5 +1,5 @@
 "use client";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card} from "@/components/ui/card";
 import { useState } from "react";
 import ProgressBar from "./progress-bar";
 import { parseSection } from "@/utils/summary-helper";

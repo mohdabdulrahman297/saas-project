@@ -1,5 +1,4 @@
 import { FileText } from "lucide-react";
-import { Button } from "../ui/button";
 import NavLink from "./nav-link";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import PlanBadge from "./plan-badge";

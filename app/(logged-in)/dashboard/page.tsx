@@ -15,7 +15,7 @@ export default async function DashboardPage() {
   const userId = user?.id;
   if(!userId) return redirect("/sign-in");
 
-  const { hasReachedLimit, uploadLimit, uploadCount } =
+  const { hasReachedLimit, uploadLimit } =
     await hasReachedUploadLimit(userId);
   const summaries = await getSummaries(userId);
   return (
@@ -29,7 +29,7 @@ export default async function DashboardPage() {
                 Your Summaries
               </h1>
               <p className="text-gray-600">
-                Transform your PDFs into concise, actionable insights
+                Transform your PDFs into concise actionable insights
               </p>
             </div>
 {!hasReachedLimit && (
@@ -48,7 +48,7 @@ export default async function DashboardPage() {
           <div className="mb-6">
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-blue-800">
               <p className="text-sm ">
-                You've reached the limit of {uploadLimit} uploads on the
+                You have reached the limit of {uploadLimit} uploads on the
                 Basic plan.{" "}
                 <Link
                   href={"/#pricing"}

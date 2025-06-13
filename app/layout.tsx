@@ -6,7 +6,7 @@ import Header from "@/components/common/header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/sonner";
 import { ORIGIN_URL } from "@/utils/helpers";
-import Footer from "@/components/common/footer";
+
 
 
 const fontSans = FontSans({
